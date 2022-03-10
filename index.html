@@ -5,11 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  </head>
-  <body>
     <style>
       body {
-        background-color: black;
         font-family: "Times New Roman", Times, serif;
       }
       .to {
@@ -36,10 +33,11 @@
         display: block;
       }
     </style>
-    <fieldset>
-      <legend class="to">
-        <h1>TO-DO LIST</h1>
-      </legend>
+  </head>
+  <body>
+    <form>
+      <h1>TO-DO LIST</h1>
+
       <div class="container">
         <input
           type="text"
@@ -47,42 +45,19 @@
           id="task"
           placeholder="Enter your task here"
         />
-        <input type="button" value="Add" id="add" />
+        <select name="cat" id="cat">
+          <option value="school">School</option>
+          <option value="personal">personal</option>
+          <option value="school">School</option>
+          <option value="design">Design</option>
+        </select>
+        <input type="submit" value="Add" id="add" />
       </div>
 
       <div class="list"></div>
-    </fieldset>
+    </form>
   </body>
   <script>
-    const tasks = document.getElementById("task");
-    const add = document.getElementById("add");
-
-    const container = document.querySelector(".container");
-    const list = document.querySelector(".list");
-
-    let checkbox;
-
-    add.addEventListener("click", () => {
-      const listitem = document.createElement("div");
-      listitem.style.display = "flex";
-      const p = document.createElement("p");
-      const del = document.createElement("link");
-      p.style.padding = "1rem";
-      p.style.color = "white";
-      p.style.fontSize = "1.5rem";
-      // list.style.backgroundColor='white';
-      let value = tasks.value;
-      console.log(value);
-      p.innerText = value;
-
-      var newCheckBox = document.createElement("input");
-
-      newCheckBox.type = "checkbox";
-      newCheckBox.id = "check";
-
-      listitem.appendChild(newCheckBox);
-      listitem.appendChild(p);
-      list.appendChild(listitem);
-    });
+       
   </script>
 </html>
