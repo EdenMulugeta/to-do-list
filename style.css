@@ -71,13 +71,13 @@ ul li{
 }
 .tasks
 {
-    padding-left:35rem;
+    padding-left:5rem;
     padding-top:3rem ;
 }
 .front
 {
     padding-top:10rem ;
-    padding-left: 35rem;
+    padding-left:5rem;
 }
 .title
 {
@@ -142,4 +142,25 @@ i:hover{
 .side-menu
 {
     display:none;
+}
+ .right{
+        display: none;
+    }
+@media (min-width: 1000px)
+{
+   .front,.tasks
+    {
+    padding-top:10rem ;
+    padding-left:35rem;
+    }
+    .right{
+        display: inline;
+    }
+}
+@media(min-width:760px)
+{
+   .right
+   {
+       display: inline;
+   }
 }
