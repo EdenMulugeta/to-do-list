@@ -1,0 +1,145 @@
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    color:white;
+}
+body{
+    background-color:black;
+
+}
+button,#adds{
+    background-color: hotpink;
+    border:none;
+    width:3rem;
+    height:2rem;
+}
+.left li ,.right li{
+    padding: 1.5rem;
+}
+.right{
+    padding-right:2rem
+}
+.left ul,.right ul
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left:1rem;
+}
+ul li{
+    list-style: none;
+}
+.visible
+{
+    display:inline;
+}
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem;
+  }
+.dash,.col,.title
+{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.dash i,.col i
+{
+   padding-right:0.5rem;
+}
+
+.back
+{
+    background-color: hotpink;
+    border-radius: 25%;
+    margin:0.5rem;
+}
+.navigation
+{
+    display:flex;
+    justify-content: space-between;
+    gap:1rem;
+    background-color: rgb(29, 27, 27);
+    width:100%;
+    position: fixed;
+    height: 9%;
+    z-index: 1;
+}
+.tasks
+{
+    padding-left:35rem;
+    padding-top:3rem ;
+}
+.front
+{
+    padding-top:10rem ;
+    padding-left: 35rem;
+}
+.title
+{
+    padding-bottom: 4rem;
+}
+.task-input{
+    background-color:rgb(40, 38, 38);
+    width:50%;   
+}
+.task1,.task2,.task3,.task4,.com1,.com2
+{
+    
+    background-color:rgb(40, 38, 38);
+    width:50%;
+    margin-top:2rem;
+    padding:1rem;
+
+}
+.in{
+    margin-left: 2rem;
+    width:47%
+}
+
+.title i,.tasks i
+{
+    padding-right:1rem;
+    padding-left:1rem;
+}
+.lessicon
+{
+    background-color: grey;
+    border-radius: 25%;
+    padding:0.3rem;
+}
+.left-title,.task-input,.task-title,.task-detail
+{
+  display: flex;
+  align-items: center;
+}
+#task
+{
+    background-color:rgb(40, 38, 38);
+    width:100%;
+    border: none;
+}
+i:hover{
+    cursor: pointer;
+}
+.side-menu
+{
+   position: fixed;
+    width:25%;
+    height:100%;
+    padding:8rem;
+    background-color: rgb(40, 38, 38);
+   
+}
+.side-menu li{
+    list-style: none;
+    padding:2rem;
+}
+.side-menu
+{
+    display:none;
+}

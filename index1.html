@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+    <style>
+      body {
+        font-family: "Times New Roman", Times, serif;
+      }
+      .to {
+        color: white;
+      }
+      fieldset {
+        border: 5px solid blue;
+      }
+      #task {
+        width: 50rem;
+        height: 3rem;
+        font-size: 1.5rem;
+      }
+      #add {
+        width: 5rem;
+        height: 3rem;
+      }
+      .list {
+        margin: 1rem;
+        padding: 1rem;
+      }
+
+      .list {
+        display: block;
+      }
+      .complited {
+        text-decoration: line-through;
+      }
+      .wrapper {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <h1>TO-DO LIST</h1>
+
+      <div class="container">
+        <input
+          type="text"
+          name=""
+          id="task"
+          placeholder="Enter your task here"
+        />
+        <select name="cat" id="cat">
+          <option value="school">School</option>
+          <option value="personal">personal</option>
+          <option value="school">School</option>
+          <option value="design">Design</option>
+        </select>
+        <input type="submit" value="Add" id="add" />
+      </div>
+
+      <div class="list"></div>
+      <h2 class="str" onclick="hand()">dave</h2>
+    </form>
+  </body>
+  <script>
+    const hand = () => {
+      const h2 = document.querySelector(".str");
+      h2.classList.toggle("complited");
+    };
+    const container = document.querySelector(".container");
+    const add = document.getElementById("add");
+    const task = document.getElementById("task");
+    const catergory = document.getElementById("cat");
+    let counter = 0;
+
+    const notesObj = JSON.parse(localStorage.getItem("dave")) || [];
+
+    notesObj.map((note) => {
+      const wrapper = document.createElement("div");
+      wrapper.className = "wrapper";
+      const btnup = document.createElement("button");
+      const p = document.createElement("p");
+      btnup.textContent = "update";
+      const btndel = document.createElement("button");
+      btndel.textContent = "delete";
+      btndel.id = "delete";
+      btnup.dataset.id = note.id;
+      btnup.id = "update";
+      btnup.className = "update";
+      p.innerText = note.notes;
+      p.contentEditable = "true";
+      wrapper.appendChild(p);
+      wrapper.appendChild(btnup);
+      wrapper.appendChild(btndel);
+      container.appendChild(wrapper);
+      btndel.addEventListener("click", (e) => {
+        e.preventDefault();
+        const t = notesObj.filter((el) => {
+          if (el.id != note.id) return el;
+        });
+        localStorage.setItem("dave", JSON.stringify(t));
+      });
+
+      // btnup.addEventListener("click", (e) => {
+      //   let data = p.innerText;
+      //   console.log(data);
+      //   e.preventDefault();
+      //   const t = notesObj.filter((el) => {
+      //     if (el.id == note.id) el.notes = data;
+      //   });
+      //   localStorage.setItem("dave", JSON.stringify(t));
+      // });
+
+      // container.appendChild(p);
+    });
+    const up = document.querySelectorAll(".update");
+    // console.log(notes);
+    let d = JSON.parse(localStorage.getItem("dave"));
+    up.forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        const id = el.getAttribute("data-id");
+        // let a = d.forEach((note) => {
+        //   console.log(d);
+        //   if (note.id == id) {
+        //     note.notes = "sd";
+        //   }
+        //   return note;
+        // });
+        console.log(a);
+        // localStorage.setItem("dave", JSON.stringify(a));
+      });
+    });
+    add.addEventListener("click", (e) => {
+      e.preventDefault();
+      notesObj.push({
+        notes: task.value,
+        category: catergory.value,
+        id: Math.floor(Math.random() * 30000),
+      });
+
+      // const wrapper=document.createElement('div');
+      // const btnup= document.createElement('button');
+      // btnup.innerText='update';
+      // wrapper.appendChild(btnup);
+      // container.appendChild(wrapper);
+
+      localStorage.setItem("dave", JSON.stringify(notesObj));
+      const notes = JSON.parse(localStorage.getItem("dave"));
+      const p = document.createElement("p");
+      console.log(notes);
+      const wrapper = document.createElement("div");
+      wrapper.className = "wrapper";
+      const btnup = document.createElement("button");
+      const btndel = document.createElement("button");
+      console.log(notes);
+      notes.map((note) => {
+        p.id = note.id;
+        p.contentEditable = "true";
+        btndel.textContent = "delete";
+        btnup.textContent = "update";
+        btnup.id = "update";
+        btndel.id = "delete";
+        btnup.classList = "update";
+        p.innerText = note.notes;
+        container.appendChild(wrapper);
+        wrapper.appendChild(p);
+        wrapper.appendChild(btnup);
+        wrapper.appendChild(btndel);
+        btndel.addEventListener("click", (e) => {
+          e.preventDefault();
+          console.log(note.id);
+          const t = notes.filter((el) => {
+            if (el.id != note.id) {
+              return el;
+            }
+          });
+          localStorage.setItem("dave", JSON.stringify(t));
+        });
+
+        // btnup.addEventListener("click", (e) => {
+        //   e.preventDefault();
+        //   let val = p.innerText;
+        //   // console.log(val);
+        //   const t = notes.filter((el) => {
+        //     if (el.id == note.id) {
+        //       el.notes = val;
+        //     }
+        //     return el;
+        //   });
+        //   // for (n of notes) {
+        //   //   if (n.id == note.id) {
+        //   //     note.notes = val;
+        //   //     console.log("boom");
+        //   //   }
+        //   // }
+        //   // console.log(notes);
+        //   localStorage.setItem("dave", JSON.stringify(t));
+        // });
+      });
+    });
+  </script>
+</html>

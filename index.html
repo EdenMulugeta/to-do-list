@@ -1,63 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      body {
-        font-family: "Times New Roman", Times, serif;
-      }
-      .to {
-        color: white;
-      }
-      fieldset {
-        border: 5px solid blue;
-      }
-      #task {
-        width: 50rem;
-        height: 3rem;
-        font-size: 1.5rem;
-      }
-      #add {
-        width: 5rem;
-        height: 3rem;
-      }
-      .list {
-        margin: 1rem;
-        padding: 1rem;
-      }
-
-      .list {
-        display: block;
-      }
-    </style>
-  </head>
-  <body>
-    <form>
-      <h1>TO-DO LIST</h1>
-
-      <div class="container">
-        <input
-          type="text"
-          name=""
-          id="task"
-          placeholder="Enter your task here"
-        />
-        <select name="cat" id="cat">
-          <option value="school">School</option>
-          <option value="personal">personal</option>
-          <option value="school">School</option>
-          <option value="design">Design</option>
-        </select>
-        <input type="submit" value="Add" id="add" />
-      </div>
-
-      <div class="list"></div>
-    </form>
-  </body>
-  <script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Smooch+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
+    <title>To-do List</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <nav class="navigation">
+        <div class="left">
+            <ul>
+                <li><i class="fa fa-solid fa-bars" id="bar"></i></li>
+                <li><div class="dash"><i class="fa-regular fa-folder"></i><p>Dashboard</p></div></li>
+                <li><div class="col"><i class="fa-regular fa-folder"></i><p>Collections</p></div></li>
+            </ul>
+        </div>
+        <div class="right">
+            <ul>
+                <li> <input type="submit" value="+" id="adds" /></li>
+                <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                <li><i class="fa-regular fa-bell"></i></li>
+                <li><i class="fa-regular fa-bell"></i></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="side-menu" id="drop">
+        <ul>
+            <li><div class="dash"><i class="fa-regular fa-book-open"></i><p>School</p></div></li>
+            <li><div class="dash"><i class="fa-regular fa-user"></i><p>Personal</p></div></li>
+            <li><div class="dash"><i class="fa-regular fa-pen-fancy"></i><p>Design</p></div></li>
+        </ul>
+    </div>
+    <section class="front">
+    
+        <div class="title">
+            <div class="dash">
+            <i class="fa-regular fa-less-than lessicon "></i>
+            <h1><span>School</span></h1></div>
+            <div class="col">
+                <i class="fa-regular fa-ellipsis-stroke"></i>
+            </div>
+        </div>
+        <div class="add">
+            <div class="task-input">
+                <input type="submit" value="+" id="adds" />
+               <input type="text" name="task" id="task"placeholder="Add new Task">
+      
+            </div>
+</div>
        
-  </script>
+    </section>
+    <section class="tasks">
+       <h1>Tasks-<span>8</span></h1>
+
+       <div class="task1">
+           <div class="task-title">
+            <i class="fa-regular fa-square"></i>
+            <p>Finish the essay collabrations</p>
+           </div>
+           <div class="task-detail">
+            <i class="fa fa-ellipsis-stroke-vertical"></i>
+            <p>0/1</p>
+            <i class="fa-regular fa-suitcase"></i>
+            <p>Today</p>
+            </div>
+    </div>
+    <div class="task2 in">
+        <div class="task-title">
+         <i class="fa-regular fa-square"></i>
+         <p>Send collabration files to jerusalem</p>
+        </div>
+ </div>
+ <div class="task3">
+    <div class="task-title">
+     <i class="fa-regular fa-square"></i>
+     <p>Finish the essay collabrations</p>
+    </div>
+    <div class="task-detail">
+     <i class="fa fa-ellipsis-stroke-vertical"></i>
+     <p>0/1</p>
+     <i class="fa-regular fa-suitcase"></i>
+     <p>Today</p></div>
+</div>
+<div class="task4 in ">
+    <div class="task-title">
+     <i class="fa-regular fa-square"></i>
+     <p>Read the next chapter of the book in Denish</p>
+    </div>
+
+</div>
+       
+    </section>
+    <section class="tasks">
+        <h1>Completed-<span>2</span></h1>
+  
+     </div>
+     <div class="com1">
+         <div class="task-title">
+            <i class="fa-regular fa-square-check"></i>
+          <p>Send the finished assignment</p>
+         </div>
+  </div>
+
+ <div class="com2">
+     <div class="task-title">
+        <i class="fa-regular fa-square-check"></i>
+      <p>Finish the essay collabrations</p>
+     </div>
+ 
+ </div>
+        
+     </section>
+ 
+
+    <script>
+        
+            const sideMenu=document.querySelector(".side-menu")
+            const bar=document.getElementById("bar");
+            
+            bar.addEventListener('click',function()
+            {
+                sideMenu.classList.toggle("visible");
+            })
+
+            const container = document.querySelector(".add");
+            const add = document.getElementById("adds");
+             const task = document.getElementById("task");
+            let counter = 0;
+            const notesObj = JSON.parse(localStorage.getItem("dave")) || [];
+
+    notesObj.map((note) => {
+      const wrapper = document.createElement("div");
+      wrapper.className = "wrapper";
+      const btnup = document.createElement("button");
+      const p = document.createElement("p");
+      btnup.textContent = "update";
+      const btndel = document.createElement("button");
+      btndel.textContent = "delete";
+      btndel.id = "delete";
+      btnup.dataset.id = note.id;
+      btnup.id = "update";
+      btnup.className = "update";
+      p.innerText = note.notes;
+      p.contentEditable = "true";
+      wrapper.appendChild(p);
+      wrapper.appendChild(btnup);
+      wrapper.appendChild(btndel);
+      container.appendChild(wrapper);
+      btndel.addEventListener("click", (e) => {
+        e.preventDefault();
+        const t = notesObj.filter((el) => {
+          if (el.id != note.id) return el;
+        });
+        localStorage.setItem("dave", JSON.stringify(t));
+      });
+    });
+    const up = document.querySelectorAll(".update");
+    // console.log(notes);
+    let d = JSON.parse(localStorage.getItem("dave"));
+    up.forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        const id = el.getAttribute("data-id");
+        // let a = d.forEach((note) => {
+        //   console.log(d);
+        //   if (note.id == id) {
+        //     note.notes = "sd";
+        //   }
+        //   return note;
+        // });
+        console.log(a);
+        // localStorage.setItem("dave", JSON.stringify(a));
+      });
+    });
+    add.addEventListener("click", (e) => {
+      e.preventDefault();
+      notesObj.push({
+        notes: task.value,
+        id: Math.floor(Math.random() * 30000),
+      });
+
+      // const wrapper=document.createElement('div');
+      // const btnup= document.createElement('button');
+      // btnup.innerText='update';
+      // wrapper.appendChild(btnup);
+      // container.appendChild(wrapper);
+
+      localStorage.setItem("dave", JSON.stringify(notesObj));
+      const notes = JSON.parse(localStorage.getItem("dave"));
+      const p = document.createElement("p");
+      console.log(notes);
+      const wrapper = document.createElement("div");
+      wrapper.className = "wrapper";
+      const btnup = document.createElement("button");
+      const btndel = document.createElement("button");
+      console.log(notes);
+      notes.map((note) => {
+        p.id = note.id;
+        p.contentEditable = "true";
+        btndel.textContent = "delete";
+        btnup.textContent = "update";
+        btnup.id = "update";
+        btndel.id = "delete";
+        btnup.classList = "update";
+        p.innerText = note.notes;
+        container.appendChild(wrapper);
+        wrapper.appendChild(p);
+        wrapper.appendChild(btnup);
+        wrapper.appendChild(btndel);
+        btndel.addEventListener("click", (e) => {
+          e.preventDefault();
+          console.log(note.id);
+          const t = notes.filter((el) => {
+            if (el.id != note.id) {
+              return el;
+            }
+          });
+          localStorage.setItem("dave", JSON.stringify(t));
+        });
+
+        // btnup.addEventListener("click", (e) => {
+        //   e.preventDefault();
+        //   let val = p.innerText;
+        //   // console.log(val);
+        //   const t = notes.filter((el) => {
+        //     if (el.id == note.id) {
+        //       el.notes = val;
+        //     }
+        //     return el;
+        //   });
+        //   // for (n of notes) {
+        //   //   if (n.id == note.id) {
+        //   //     note.notes = val;
+        //   //     console.log("boom");
+        //   //   }
+        //   // }
+        //   // console.log(notes);
+        //   localStorage.setItem("dave", JSON.stringify(t));
+        // });
+      });
+    });
+
+    </script>
+    <script src="https://kit.fontawesome.com/8488b4087d.js" crossorigin="anonymous"></script>
+</body>
 </html>
+
